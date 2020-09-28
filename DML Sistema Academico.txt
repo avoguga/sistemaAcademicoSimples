@@ -1,0 +1,70 @@
+-- Inclusão aluno
+
+INSERT  INTO 
+aluno(matricula, nome, cpf, email, data_nascimento)
+VALUES
+(1, 'Gustavo', '11754169492', 'gustavo@gmail.com', '04-05-2000'), 
+(2, 'Arthur', '11458765492', 'arthur3333@gmail.com', '06/15/1998'), 
+(3, 'Carlos', '11877496582', 'carlinhos@gmail.com', '08/27/1997'), 
+(4, 'Maria', '18954245630', 'ana@hotmail.com', '02/28/1999'), 
+(5, 'Ana', '11724169580', 'tiaguinhoreidelas@gmail.com', '10/13/1995'),
+(6, 'Tiago', '11724169580', 'tiaguinhoreidelas@gmail.com', '12/20/1999'), 
+(7, 'John', '33569548910', 'darkpaladin123@gmail.com', '06/30/2000');
+
+-- Inclusão curso
+
+INSERT INTO
+curso(id_curso, curso)
+VALUES
+(1, 'Sistemas de Informação');
+
+-- Inclusão periodo
+
+INSERT INTO
+periodo(id_periodo, periodo, id_curso)
+VALUES
+(1, '1º periodo', 1),
+(2, '2º periodo', 1),
+(3, '3º periodo', 1),
+(4, '4º periodo', 1);
+
+-- Inclusão disciplina
+
+INSERT INTO
+disciplina(id_disciplina, disciplina, id_periodo)
+VALUES
+(1, 'Programação I', 1),
+(2, 'Programação II', 2),
+(3, 'Logica', 1),
+(4, 'Banco de dados', 2);
+
+-- Inclusão notas
+
+INSERT INTO 
+notas(id_nota, id_disciplina, nota)
+VALUES
+(1, 1, 8.5),
+(2, 1, 7.5),
+(3, 1, 6.25),
+(4, 1, 9);
+
+
+-- Inclusão professor
+
+INSERT INTO
+professor(matricula, nome, email, data_nascimento)
+VALUES
+(1, 'Sandney', 'sandney@gmail.com', '03/20/1990'),
+(2, 'Mozart', 'mozart@gmail.com', '09/13/1985'),
+(3, 'Sandney', 'sandney@gmail.com', '12/22/1992'),
+(4, 'Carlos', 'carloscesmac@gmail.com', '06/17/1980');
+
+
+-- Inclusão disciplina_professor
+INSERT INTO 
+disciplina_professor(id_disciplina,  matricula_professor)
+VALUES
+(1, 4),
+(2, 3),
+(3, 2),
+(4, 1);

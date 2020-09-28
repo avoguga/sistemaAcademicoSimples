@@ -1,0 +1,39 @@
+CREATE TABLE aluno (
+  matriculaaluno SERIAL PRIMARY KEY,
+  nomealuno varchar(100) NOT NULL,
+  cpf varchar(100) NOT NULL,
+  email varchar(100) NOT NULL, 
+  data_nascimento date NOT NULL);
+
+
+CREATE TABLE turma (
+  idturma SERIAL PRIMARY KEY,
+  turma varchar(100) NOT NULL,
+  matriculaaluno int references aluno(matriculaaluno));
+  
+
+CREATE TABLE curso (
+  idcurso SERIAL PRIMARY KEY,
+  curso varchar(100) NOT NULL,
+  idturma int references turma(idturma));
+
+
+CREATE TABLE disciplina (
+  iddisciplina SERIAL PRIMARY KEY,
+  disciplina varchar(100) NOT NULL,
+  idcurso int references curso(idcurso));
+
+
+CREATE TABLE professor (
+  matriculaprofessor SERIAL PRIMARY KEY,
+  nomeprofessor varchar(100) NOT NULL,
+  iddisciplina int references disciplina(iddisciplina));
+
+CREATE TABLE disciplina_professor (
+  iddisciplina int NOT NULL references disciplina(iddisciplina) NOT NULL,
+  matriculaprofessor int NOT NULL references professor(matriculaprofessor) NOT NULL,
+  PRIMARY KEY(iddisciplina, matriculaprofessor));
+
+
+
+
